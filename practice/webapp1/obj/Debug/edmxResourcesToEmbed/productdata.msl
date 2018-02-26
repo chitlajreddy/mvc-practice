@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ECOMM_S3ModelStoreContainer" CdmEntityContainer="ECOMM_S3Entities">
+    <EntitySetMapping Name="CEN_PRODUCTS">
+      <EntityTypeMapping TypeName="ECOMM_S3Model.CEN_PRODUCTS">
+        <MappingFragment StoreEntitySet="CEN_PRODUCTS">
+          <ScalarProperty Name="PRODUCT_SK" ColumnName="PRODUCT_SK" />
+          <ScalarProperty Name="MEDIA_TYPE_SK" ColumnName="MEDIA_TYPE_SK" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="ISBN_13" ColumnName="ISBN_13" />
+          <ScalarProperty Name="ISBN_10" ColumnName="ISBN_10" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="EDITION" ColumnName="EDITION" />
+          <ScalarProperty Name="COPYRIGHT_YEAR" ColumnName="COPYRIGHT_YEAR" />
+          <ScalarProperty Name="PUB_STATUS_CODE" ColumnName="PUB_STATUS_CODE" />
+          <ScalarProperty Name="PUBLICATION_DATE" ColumnName="PUBLICATION_DATE" />
+          <ScalarProperty Name="SUBJECT_KEYWORDS" ColumnName="SUBJECT_KEYWORDS" />
+          <ScalarProperty Name="BLOCK_FLAG" ColumnName="BLOCK_FLAG" />
+          <ScalarProperty Name="PACK_TYPE" ColumnName="PACK_TYPE" />
+          <ScalarProperty Name="PROMOTION_READY_FLAG" ColumnName="PROMOTION_READY_FLAG" />
+          <ScalarProperty Name="INTERNAL_PROMOTION_FLAG" ColumnName="INTERNAL_PROMOTION_FLAG" />
+          <ScalarProperty Name="ARCHIVED_FLAG" ColumnName="ARCHIVED_FLAG" />
+          <ScalarProperty Name="NO_OF_PAGES" ColumnName="NO_OF_PAGES" />
+          <ScalarProperty Name="ON_APPROVAL_FLAG" ColumnName="ON_APPROVAL_FLAG" />
+          <ScalarProperty Name="YTD" ColumnName="YTD" />
+          <ScalarProperty Name="TOC" ColumnName="TOC" />
+          <ScalarProperty Name="FEATURES" ColumnName="FEATURES" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="STOCK_STATUS" ColumnName="STOCK_STATUS" />
+          <ScalarProperty Name="STOCK_QUANTITY" ColumnName="STOCK_QUANTITY" />
+          <ScalarProperty Name="EPUB_FILE_LOCATION" ColumnName="EPUB_FILE_LOCATION" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DATE_CREATED" ColumnName="DATE_CREATED" />
+          <ScalarProperty Name="USER_CREATED" ColumnName="USER_CREATED" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="USER_MODIFIED" ColumnName="USER_MODIFIED" />
+          <ScalarProperty Name="AUDIENCE_CODE" ColumnName="AUDIENCE_CODE" />
+          <ScalarProperty Name="IMPRINT" ColumnName="IMPRINT" />
+          <ScalarProperty Name="SAMPLING_RESTRICTION_CODE" ColumnName="SAMPLING_RESTRICTION_CODE" />
+          <ScalarProperty Name="PERMANANT_ACTIVE" ColumnName="PERMANANT_ACTIVE" />
+          <ScalarProperty Name="PUBLISHED_BY" ColumnName="PUBLISHED_BY" />
+          <ScalarProperty Name="LOCAL_IMPORT" ColumnName="LOCAL_IMPORT" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PUBLISHER_CODE" ColumnName="PUBLISHER_CODE" />
+          <ScalarProperty Name="COUNTRY_OF_ORIGIN" ColumnName="COUNTRY_OF_ORIGIN" />
+          <ScalarProperty Name="PRODUCT_TYPE" ColumnName="PRODUCT_TYPE" />
+          <ScalarProperty Name="PRODUCT_FORMAT" ColumnName="PRODUCT_FORMAT" />
+          <ScalarProperty Name="PRODUCT_FORMAT_TYPE" ColumnName="PRODUCT_FORMAT_TYPE" />
+          <ScalarProperty Name="TLID" ColumnName="TLID" />
+          <ScalarProperty Name="eBook_Platform_Name" ColumnName="eBook_Platform_Name" />
+          <ScalarProperty Name="BINDING_FORMAT" ColumnName="BINDING_FORMAT" />
+          <ScalarProperty Name="DDC" ColumnName="DDC" />
+          <ScalarProperty Name="NUMBER_OF_VOLUMES" ColumnName="NUMBER_OF_VOLUMES" />
+          <ScalarProperty Name="PROMOTION_CODE" ColumnName="PROMOTION_CODE" />
+          <ScalarProperty Name="SUBSTITUTE_PRODUCT_SK" ColumnName="SUBSTITUTE_PRODUCT_SK" />
+          <ScalarProperty Name="SUBSTITUTE_ISBN13" ColumnName="SUBSTITUTE_ISBN13" />
+          <ScalarProperty Name="PROD_TITLE" ColumnName="PROD_TITLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_getproducts" FunctionName="ECOMM_S3Model.Store.sp_getproducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ECOMM_S3Model.sp_getproducts_Result">
+          <ScalarProperty Name="ISBN_13" ColumnName="ISBN_13" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_registerUser" FunctionName="ECOMM_S3Model.Store.sp_registerUser" />
+    <EntitySetMapping Name="temp_customers">
+      <EntityTypeMapping TypeName="ECOMM_S3Model.temp_customers">
+        <MappingFragment StoreEntitySet="temp_customers">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

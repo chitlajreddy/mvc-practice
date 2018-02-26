@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ECOMM_S3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CEN_PRODUCTS">
+    <Key>
+      <PropertyRef Name="PRODUCT_SK" />
+    </Key>
+    <Property Name="PRODUCT_SK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MEDIA_TYPE_SK" Type="int" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="ISBN_13" Type="varchar" MaxLength="30" />
+    <Property Name="ISBN_10" Type="varchar" MaxLength="30" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="800" />
+    <Property Name="EDITION" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="COPYRIGHT_YEAR" Type="varchar" MaxLength="4" />
+    <Property Name="PUB_STATUS_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="PUBLICATION_DATE" Type="date" />
+    <Property Name="SUBJECT_KEYWORDS" Type="varchar" MaxLength="4000" />
+    <Property Name="BLOCK_FLAG" Type="char" MaxLength="1" />
+    <Property Name="PACK_TYPE" Type="varchar" MaxLength="30" />
+    <Property Name="PROMOTION_READY_FLAG" Type="char" MaxLength="1" />
+    <Property Name="INTERNAL_PROMOTION_FLAG" Type="char" MaxLength="1" />
+    <Property Name="ARCHIVED_FLAG" Type="char" MaxLength="1" />
+    <Property Name="NO_OF_PAGES" Type="int" />
+    <Property Name="ON_APPROVAL_FLAG" Type="char" MaxLength="1" />
+    <Property Name="YTD" Type="numeric" Precision="15" Scale="0" />
+    <Property Name="TOC" Type="varchar" MaxLength="4000" />
+    <Property Name="FEATURES" Type="varchar" MaxLength="4000" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="2000" />
+    <Property Name="STOCK_STATUS" Type="varchar" MaxLength="30" />
+    <Property Name="STOCK_QUANTITY" Type="numeric" Precision="15" Scale="4" />
+    <Property Name="EPUB_FILE_LOCATION" Type="varchar" MaxLength="150" />
+    <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="STATUS" Type="varchar" MaxLength="60" />
+    <Property Name="DATE_CREATED" Type="datetime" Nullable="false" />
+    <Property Name="USER_CREATED" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="DATE_MODIFIED" Type="datetime" />
+    <Property Name="USER_MODIFIED" Type="varchar" MaxLength="60" />
+    <Property Name="AUDIENCE_CODE" Type="varchar" MaxLength="25" />
+    <Property Name="IMPRINT" Type="varchar" MaxLength="5" />
+    <Property Name="SAMPLING_RESTRICTION_CODE" Type="varchar" MaxLength="5" />
+    <Property Name="PERMANANT_ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="PUBLISHED_BY" Type="varchar" MaxLength="800" />
+    <Property Name="LOCAL_IMPORT" Type="varchar" MaxLength="60" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="50" />
+    <Property Name="PUBLISHER_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="COUNTRY_OF_ORIGIN" Type="varchar" MaxLength="100" />
+    <Property Name="PRODUCT_TYPE" Type="varchar" MaxLength="15" />
+    <Property Name="PRODUCT_FORMAT" Type="varchar" MaxLength="50" />
+    <Property Name="PRODUCT_FORMAT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="TLID" Type="varchar" MaxLength="30" />
+    <Property Name="eBook_Platform_Name" Type="varchar" MaxLength="100" />
+    <Property Name="BINDING_FORMAT" Type="varchar" MaxLength="50" />
+    <Property Name="DDC" Type="varchar" MaxLength="150" />
+    <Property Name="NUMBER_OF_VOLUMES" Type="numeric" Precision="4" Scale="0" />
+    <Property Name="PROMOTION_CODE" Type="varchar" MaxLength="25" />
+    <Property Name="SUBSTITUTE_PRODUCT_SK" Type="int" />
+    <Property Name="SUBSTITUTE_ISBN13" Type="varchar" MaxLength="30" />
+    <Property Name="PROD_TITLE" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="temp_customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="sp_getproducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_registerUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="customerid" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="ECOMM_S3ModelStoreContainer">
+    <EntitySet Name="CEN_PRODUCTS" EntityType="Self.CEN_PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="temp_customers" EntityType="Self.temp_customers" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
